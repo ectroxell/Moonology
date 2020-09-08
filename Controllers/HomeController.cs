@@ -16,17 +16,9 @@ namespace Astro.Controllers
 
         public IActionResult Index()
         {
-
             MoonIllumination moonIllum = MoonCalc.GetMoonIllumination(DateTime.UtcNow);
-
-            MoonData currentMoonData = new MoonData()
-            {
-                Phase = moonIllum.Phase.ToString(),
-                Illumination = moonIllum.Fraction.ToString()
-            }; 
-            
-            
-
+            MoonData currentMoonData = new MoonData(moonIllum);
+           
             return View(currentMoonData);
         }
 
