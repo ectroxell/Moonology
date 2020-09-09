@@ -57,7 +57,7 @@ namespace Astro.Models
             }
 
             //set illumination
-            Illumination = (cfg.Fraction * 100).ToString() + '%';
+            Illumination = Convert.ToInt32(cfg.Fraction * 100).ToString() + '%';
         }
     }
 }
