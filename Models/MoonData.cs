@@ -8,56 +8,59 @@ namespace Astro.Models
 {
     public class MoonData
     {
-        public string Phase { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
         public int PhaseID { get; set; }
         public string Illumination { get; set; }
 
         public MoonData(MoonIllumination cfg)
         {
             // set phase
-            if (cfg.Phase == 0)
+            if (0 <= cfg.Phase && cfg.Phase < 0.1)
             {
-                Phase = "New Moon";
+                Name = "New Moon";
                 PhaseID = 1;
             }
-            if (0 < cfg.Phase && cfg.Phase > 0.25)
+            if (0.1 <= cfg.Phase && cfg.Phase < 0.25)
             {
-                Phase = "Waxing Crescent";
+                Name = "Waxing Crescent";
                 PhaseID = 2;
             }
-            if (cfg.Phase == 0.25)
+            if (0.25 <= cfg.Phase && cfg.Phase < 0.28)
             {
-                Phase = "First Quarter";
+                Name = "First Quarter";
                 PhaseID = 3;
             }
-            if (0.25 < cfg.Phase && cfg.Phase > 0.5)
+            if (0.28 <= cfg.Phase && cfg.Phase < 0.5)
             {
-                Phase = "Waxing Gibbous";
+                Name = "Waxing Gibbous";
                 PhaseID = 4;
             }
-            if (cfg.Phase == 0.5)
+            if (0.5 <= cfg.Phase && cfg.Phase < 0.53)
             {
-                Phase = "Full Moon";
+                Name = "Full Moon";
                 PhaseID = 5;
             }
-            if (0.5 < cfg.Phase && cfg.Phase > 0.75)
+            if (0.53 <= cfg.Phase && cfg.Phase < 0.75)
             {
-                Phase = "Waning Gibbous";
+                Name = "Waning Gibbous";
                 PhaseID = 6;
             }
-            if (cfg.Phase == 0.75)
+            if (0.75 <= cfg.Phase && cfg.Phase < 0.78)
             {
-                Phase = "Last Quarter";
+                Name = "Third Quarter";
                 PhaseID = 7;
             }
-            if (0.75 < cfg.Phase && cfg.Phase > 1)
+            if (0.78 <= cfg.Phase && cfg.Phase < 1)
             {
-                Phase = "Waning Crescent";
+                Name = "Waning Crescent";
                 PhaseID = 8;
             }
 
             //set illumination
             Illumination = Convert.ToInt32(cfg.Fraction * 100).ToString() + '%';
         }
+
+        public MoonData() { }
     }
 }

@@ -16,7 +16,6 @@ namespace Astro.Models
         public string LastName { get; set; }
 
         public string FullName { get { return $"{FirstName} {LastName}"; } }
-        public List<Journal> Journals { get; set; }
         
     }
 }

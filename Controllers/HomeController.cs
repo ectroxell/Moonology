@@ -16,12 +16,13 @@ namespace Astro.Controllers
 
         public IActionResult Index()
         {
-            MoonIllumination moonIllum = MoonCalc.GetMoonIllumination(DateTime.UtcNow);
+            MoonIllumination moonIllum = MoonCalc.GetMoonIllumination(DateTime.Now.ToUniversalTime());
             MoonData currentMoonData = new MoonData(moonIllum);
+
            
             return View(currentMoonData);
         }
-
+        
         
     }
 }
