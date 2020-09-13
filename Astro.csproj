@@ -18,8 +18,4 @@
     <PackageReference Include="SunCalcNet" Version="1.1.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>

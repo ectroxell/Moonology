@@ -1,7 +1,11 @@
-﻿@model MoonData
+﻿@model Astro.ViewModels.IndexViewModel
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <h2>Current Moon Info</h2>
-    <p>The moon is currently in it's <i>@Model.Name</i> phase and is <strong>@Model.Illumination</strong> illuminated.</p>
+    <p>The moon is currently in it's <i>@Model.MoonPhaseInfo.Name</i> phase and is <strong>@Model.CurrentMoonData.Illumination</strong> illuminated.</p>
+</div>
+<div>
+    <p>@Model.MoonPhaseInfo.Name: @Model.MoonPhaseInfo.Keywords</p>
+    <p>@Model.MoonPhaseInfo.DescriptionShort</p>
 </div>

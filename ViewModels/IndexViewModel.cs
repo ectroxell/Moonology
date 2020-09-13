@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Astro.ViewModels
 {
-    public class HomePageViewModel
+    public class IndexViewModel
     {
         public MoonData CurrentMoonData { get; set; }
         public MoonPhaseInfo MoonPhaseInfo { get; set; }
