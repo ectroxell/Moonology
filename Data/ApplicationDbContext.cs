@@ -18,10 +18,9 @@ namespace Astro.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            builder.Entity<AppUser>().Ignore(e => e.FullName);
-        }
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+          
+        //}
     }
 }

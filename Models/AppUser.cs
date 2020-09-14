@@ -10,12 +10,8 @@ namespace Astro.Models
     public class AppUser : IdentityUser<int>
     {
         [PersonalData, Required, StringLength(20)]
-        public string FirstName { get; set; }
+        public string Name { get; set; }
 
-        [PersonalData, StringLength(20)]
-        public string LastName { get; set; }
-
-        public string FullName { get { return $"{FirstName} {LastName}"; } }
         
     }
 }
