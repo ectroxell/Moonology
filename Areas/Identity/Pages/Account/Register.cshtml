@@ -8,32 +8,28 @@
 
 <div class="container">
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-        <h4>Create a new account!</h4>
+        <h4>create a new account!</h4>
         <hr />
         <div class="form-row">
-            <div asp-validation-summary="All" class="text-danger col"></div>
-            <div class="form-control">
-                <input placeholder="Name" asp-for="Input.Name" class="form-control" />
+                <input placeholder="Name" asp-for="Input.Name" class="col form-control" />
                 <span asp-validation-for="Input.Name" class="text-danger"></span>
-            </div>
-            <div asp-validation-summary="All" class="text-danger col"></div>
-            <div class="form-control">
-                <input placeholder="Email" asp-for="Input.Email" class="form-control" />
+
+                <input placeholder="Email" asp-for="Input.Email" class="col form-control" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
+           
         </div>
         <div class="form-row">
-            <div class="form-control col">
-                <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+
+                <input asp-for="Input.Password" class="form-control col" placeholder="Password" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-control col">
-                <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirm Password"/>
+
+
+                <input asp-for="Input.ConfirmPassword" class="form-control col" placeholder="Confirm Password"/>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
+
         </div>
         <div class="form-row">
-            <button type="submit" class="btn btn-dark col">register</button>
+            <button type="submit" class="btn btn-dark col form-button">register</button>
         </div>
     </form>
 </div>
