@@ -25,6 +25,7 @@ namespace Astro
                 try
                 {
                     MoonPhaseSeedData.Initialize(services);
+                    RitualSeedData.Initialize(services);
                 }
                 catch (Exception ex)
                 {

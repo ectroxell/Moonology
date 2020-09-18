@@ -1,0 +1,36 @@
+﻿@model Astro.ViewModels.MoonDetailsViewModel
+
+<div class="jumbotron">
+    <h1 class="display-3">@Model.Name</h1>
+    <p class="lead">@Model.Keywords: @Model.DescriptionShort</p>
+
+
+    <hr class="my-2">
+    <p class="lead">@Model.DescriptionLong</p>
+    
+
+</div>
+
+<div>
+    @if (Model.Rituals != null)
+    {
+    <div class="card">
+        <div class="card-header">Rituals for the @Model.Name</div>
+        <div class="card-body">
+            @if (Model.Rituals.Count > 1)
+            {
+            <ul>
+                @foreach (Ritual ritual in Model.Rituals)
+                {
+                    <li>@ritual.Text</li>
+                }
+            </ul>
+            }
+            else
+            {
+            @Model.Rituals[0].Text
+            }
+        </div>
+    </div>
+    }
+</div>

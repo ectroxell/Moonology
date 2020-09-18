@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Astro.Data;
 using Astro.Models;
+using Astro.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Microsoft.EntityFrameworkCore;
 
 namespace Astro.Controllers
 {
@@ -23,9 +23,25 @@ namespace Astro.Controllers
             userManager = _userManager;
         }
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
-            return View();
+            MoonPhaseInfo moonPhase = context.MoonPhases.Where(c => c.PhaseID == id).FirstOrDefault();
+            IList<Ritual> rituals = context.Rituals.Where(c => c.PhaseID == moonPhase.PhaseID).ToList();
+            MoonDetailsViewModel viewModel = new MoonDetailsViewModel() {
+                Keywords = moonPhase.Keywords,
+                Name = moonPhase.Name,
+                DescriptionShort = moonPhase.DescriptionShort,
+                DescriptionLong = moonPhase.DescriptionLong
+            };
+            if (rituals.Count > 0)
+            {
+                viewModel.Rituals = rituals;
+            } else
+            {
+                viewModel.Rituals = null;
+            }
+
+            return View(viewModel);
         }
     }
 }
