@@ -13,7 +13,7 @@ namespace Astro.Data
         public DbSet<MoonData> MoonDataSets { get; set; }
         public override DbSet<AppUser> Users { get; set; }
         public DbSet<Ritual> Rituals { get; set; }
-       // public DbSet<Activity> Activities { get; set; }
+        public DbSet<Activity> Activities { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
              : base(options)

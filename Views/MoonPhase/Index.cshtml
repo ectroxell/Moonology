@@ -11,26 +11,48 @@
 
 </div>
 
-<div>
+<div class="card-deck">
     @if (Model.Rituals != null)
     {
-    <div class="card">
-        <div class="card-header">Rituals for the @Model.Name</div>
-        <div class="card-body">
-            @if (Model.Rituals.Count > 1)
-            {
-            <ul>
-                @foreach (Ritual ritual in Model.Rituals)
+        <div class="card">
+            <div class="card-header">Rituals for the @Model.Name</div>
+            <div class="card-body">
+                @if (Model.Rituals.Count > 1)
                 {
-                    <li>@ritual.Text</li>
+                    <ul>
+                        @foreach (Ritual ritual in Model.Rituals)
+                        {
+                            <li>@ritual.Text</li>
+                        }
+                    </ul>
                 }
-            </ul>
-            }
-            else
-            {
-            @Model.Rituals[0].Text
-            }
+                else
+                {
+                    @Model.Rituals[0].Text
+                }
+            </div>
         </div>
-    </div>
+    }
+
+    @if (Model.Activities != null)
+    {
+        <div class="card">
+            <div class="card-header">Activities for the @Model.Name</div>
+            <div class="card-body">
+                @if (Model.Activities.Count > 1)
+                {
+                    <ul>
+                        @foreach (Activity activity in Model.Activities)
+                        {
+                            <li>@activity.Text</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    @Model.Rituals[0].Text
+                }
+            </div>
+        </div>
     }
 </div>

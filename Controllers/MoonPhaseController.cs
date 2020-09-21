@@ -27,19 +27,24 @@ namespace Astro.Controllers
         {
             MoonPhaseInfo moonPhase = context.MoonPhases.Where(c => c.PhaseID == id).FirstOrDefault();
             IList<Ritual> rituals = context.Rituals.Where(c => c.PhaseID == moonPhase.PhaseID).ToList();
+            IList<Activity> activities = context.Activities.Where(c => c.PhaseID == moonPhase.PhaseID).ToList();
             MoonDetailsViewModel viewModel = new MoonDetailsViewModel() {
                 Keywords = moonPhase.Keywords,
                 Name = moonPhase.Name,
                 DescriptionShort = moonPhase.DescriptionShort,
-                DescriptionLong = moonPhase.DescriptionLong
+                DescriptionLong = moonPhase.DescriptionLong,
+                Activities = null,
+                Rituals = null
             };
             if (rituals.Count > 0)
             {
                 viewModel.Rituals = rituals;
-            } else
-            {
-                viewModel.Rituals = null;
             }
+            if (activities.Count > 0)
+            {
+                viewModel.Activities = activities;
+            }
+            
 
             return View(viewModel);
         }
