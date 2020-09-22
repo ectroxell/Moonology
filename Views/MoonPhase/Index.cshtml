@@ -1,58 +1,75 @@
 ﻿@model Astro.ViewModels.MoonDetailsViewModel
 
-<div class="jumbotron">
-    <h1 class="display-3">@Model.Name</h1>
-    <p class="lead">@Model.Keywords: @Model.DescriptionShort</p>
+
+<div class="wrapper">
+
+    <nav class="nav-bar nav flex-column moon-details-nav">
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="1">New Moon</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="2">Waxing Crescent</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="3">First Quarter</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="4">Waxing Gibbous</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="5">Full Moon</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="6">Waning Gibbous</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="7">Third Quarter</a>
+        <a class="nav-link btn nav-btn" asp-controller="MoonPhase" asp-action="Index" asp-route-id="8">Waning Crescent</a>
+    </nav>
+
+    <div class="container flex-column moon-details-content">
+        <div class="jumbotron bg-pink-clouds">
+            <h1 class="display-3">@Model.Name</h1>
+            <p class="lead">@Model.Keywords: @Model.DescriptionShort</p>
 
 
-    <hr class="my-2">
-    <p class="lead">@Model.DescriptionLong</p>
-    
+            <hr class="my-2">
+            <p class="lead">@Model.DescriptionLong</p>
 
-</div>
 
-<div class="card-deck">
-    @if (Model.Rituals != null)
-    {
-        <div class="card">
-            <div class="card-header">Rituals for the @Model.Name</div>
-            <div class="card-body">
-                @if (Model.Rituals.Count > 1)
-                {
-                    <ul>
-                        @foreach (Ritual ritual in Model.Rituals)
-                        {
-                            <li>@ritual.Text</li>
-                        }
-                    </ul>
-                }
-                else
-                {
-                    @Model.Rituals[0].Text
-                }
-            </div>
         </div>
-    }
 
-    @if (Model.Activities != null)
-    {
-        <div class="card">
-            <div class="card-header">Activities for the @Model.Name</div>
-            <div class="card-body">
-                @if (Model.Activities.Count > 1)
-                {
-                    <ul>
-                        @foreach (Activity activity in Model.Activities)
+        <div class="card-deck">
+            @if (Model.Rituals != null)
+            {
+                <div class="card">
+                    <div class="card-header bg-pink-clouds">Rituals for the @Model.Name</div>
+                    <div class="card-body">
+                        @if (Model.Rituals.Count > 1)
                         {
-                            <li>@activity.Text</li>
+                            <ul>
+                                @foreach (Ritual ritual in Model.Rituals)
+                                {
+                                    <li>@ritual.Text</li>
+                                }
+                            </ul>
                         }
-                    </ul>
-                }
-                else
-                {
-                    @Model.Rituals[0].Text
-                }
-            </div>
+                        else
+                        {
+                            @Model.Rituals[0].Text
+                        }
+                    </div>
+                </div>
+            }
+
+            @if (Model.Activities != null)
+            {
+                <div class="card">
+                    <div class="card-header bg-pink-clouds">Activities for the @Model.Name</div>
+                    <div class="card-body">
+                        @if (Model.Activities.Count > 1)
+                        {
+                            <ul>
+                                @foreach (Activity activity in Model.Activities)
+                                {
+                                    <li>@activity.Text</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            @Model.Activities[0].Text
+                        }
+                    </div>
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>

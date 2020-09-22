@@ -2,14 +2,14 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "login";
+    ViewData["Title"] = "Login";
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <div class="container">
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-        <h4>welcome back! log into your account below</h4>
+        <h4>Welcome back! Log into your account below</h4>
         <hr />
         <div class="form-row">
 
@@ -26,10 +26,10 @@
 
         <div class="form-row d-flex justify-content-around login-footer text-info">
             <div>
-                <a id="forgot-password" asp-page="./ForgotPassword">forgot your password?</a>
+                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
             </div>
             <div>
-                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">register as a new user</a>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user!</a>
             </div>
         </div>
     </form>

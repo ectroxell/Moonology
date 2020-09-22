@@ -62,7 +62,7 @@ namespace Astro.Data
                     Keywords = "Full expression",
                     DescriptionShort = "Celebrate your progress.",
                     DescriptionLong = "When the moon is completely illuminated, it's time to reach full expression. The full moon is the most powerful time of the moon cycle. Enjoy the full expression of life. Be fully engaged. Let the light of the moon energize you." +
-                    "This is your harvest. Harvest new internal realizations. Take note of your epiphanies. Harvest external success. Enjoy the life you are creating. Celebrate. This is a powerfully healing time. Send healing blessings to others."
+                    " This is your harvest. Harvest new internal realizations. Take note of your epiphanies. Harvest external success. Enjoy the life you are creating. Celebrate. This is a powerfully healing time. Send healing blessings to others."
                 };
                 MoonPhaseInfo waningGibbous = new MoonPhaseInfo()
                 {
@@ -79,8 +79,8 @@ namespace Astro.Data
                     Keywords = "Release",
                     DescriptionShort = "Take stock of your life. Find room to let go.",
                     DescriptionLong = "When the moon appears smaller and becomes half-illuminated, it's time to think about releasing. The third quarter moon phase signals a time to let go. Release anything you no longer need to make room for the new! Meditate on what you've" +
-                    "learned during the course of the moon cycle. Take stock of your life and notivce if there are any relationships, commitments, physical objects, habits, or emotions you are ready to let go of. Letting go will free up energy that can be used during the next" +
-                    "moon cycle. This is a quiet time to rest and restore."
+                    " learned during the course of the moon cycle. Take stock of your life and notice if there are any relationships, commitments, physical objects, habits, or emotions you are ready to let go of. Letting go will free up energy that can be used during the next" +
+                    " moon cycle. This is a quiet time to rest and restore."
                 };
                 MoonPhaseInfo waningCrescent = new MoonPhaseInfo()
                 {

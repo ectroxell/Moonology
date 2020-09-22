@@ -8,6 +8,20 @@ namespace Astro.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Activities",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PhaseID = table.Column<int>(nullable: false),
+                    Text = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Activities", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -42,8 +56,7 @@ namespace Astro.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    FirstName = table.Column<string>(maxLength: 20, nullable: false),
-                    LastName = table.Column<string>(maxLength: 20, nullable: true)
+                    Name = table.Column<string>(maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,6 +93,20 @@ namespace Astro.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MoonPhases", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Rituals",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PhaseID = table.Column<int>(nullable: false),
+                    Text = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rituals", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -231,6 +258,9 @@ namespace Astro.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Activities");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -250,6 +280,9 @@ namespace Astro.Migrations
 
             migrationBuilder.DropTable(
                 name: "MoonPhases");
+
+            migrationBuilder.DropTable(
+                name: "Rituals");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

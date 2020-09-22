@@ -26,7 +26,7 @@ namespace Astro.Data
             {
                 PhaseID = 1,
                 Text = "Go through your previous new moon intentions and write the ones that you are still hoping to fulfill on a fresh sheet of paper, along with this month's new moon intentions. Give your wishes to the moon. Write a letter to the moon telling" +
-                        "her all about your hopes, dreams, goals, and intentions. Don't forget to say thank you!"
+                        " her all about your hopes, dreams, goals, and intentions. Don't forget to say thank you!"
             };
             Ritual ritual2 = new Ritual()
             {
@@ -56,8 +56,8 @@ namespace Astro.Data
             Ritual ritual7 = new Ritual()
             {
                 PhaseID = 7,
-                Text = "On a piece of paper, write down what you are ready to release.Burn the paper in a safe way.Say aloud what you are releasing as you watch the paper burn.When the paper has finished burning," +
-                       "breathe in a cleansing breath and smile."
+                Text = "On a piece of paper, write down what you are ready to release. Burn the paper in a safe way. Say aloud what you are releasing as you watch the paper burn. When the paper has finished burning," +
+                       " breathe in a cleansing breath and smile."
             };
 
             //add to db and save changes
