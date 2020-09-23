@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Humanizer
 @model IList<Journal>
 @inject UserManager<AppUser> UserManager
 
@@ -6,32 +7,41 @@
 {
     AppUser user = await UserManager.GetUserAsync(User);
     <div class="jumbotron bg-pink-clouds">
-        <h3 class="text-white">Your moon journal</h3>
+        <h1 class="text-white">Your moonology journal</h1>
         <hr class="hr-white" />
-        <p class="lead text-white">Entries for @user.Name</p>
+        <h3 class="text-white">Entries for @user.Name</h3>
 
     </div>
 
     <table class="table-hover">
-        <thead>
+        <thead class="bg-pink-clouds">
             <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Moon Phase</th>
                 <th scope="col">Journal</th>
+                
             </tr>
         </thead>
         <tbody>
             @foreach (Journal journal in Model)
             {
+               
                 <tr>
-                    <td>@journal.Date.ToShortDateString();</td>
-                    <td>@journal.MoonPhase.Name</td>
-                    <td>@journal.JournalText</td>
+                <td><a asp-controller="Journal" asp-action="Details" asp-route-id="@journal.ID">@journal.Date.Humanize()</a></td>
+                <td>@journal.MoonPhase.Name</td>
+                <td>@journal.JournalText</td>
                 </tr>
+                 
             }
         </tbody>
 
     </table>
+           
+    <div>
+        <a asp-controller="Journal" asp-action="Add">
+            Make a new journal entry
+        </a>
+    </div>
 
 }
 else
@@ -39,6 +49,6 @@ else
     <div class="jumbotron bg-pink-clouds">
         <h3 class="text-white">You don't have any journal entries yet!</h3>
         <hr class="hr-white" />
-        <p class="lead">Click <a asp-controller="Journal" asp-action="Add">here</a> to make one.</p>
+        <p class="lead text-white">Click <a asp-controller="Journal" asp-action="Add">here</a> to make one.</p>
     </div>
 }

@@ -35,6 +35,8 @@ namespace Astro.Controllers
             MoonIllumination moonIllum = MoonCalc.GetMoonIllumination(DateTime.Now.ToUniversalTime());
             MoonData currentMoonData = new MoonData(moonIllum);
             MoonPhaseInfo currentMoonPhaseInfo = context.MoonPhases.Where(c => c.PhaseID == currentMoonData.PhaseID).FirstOrDefault();
+
+            
             AddJournalViewModel viewModel = new AddJournalViewModel()
             {
                 MoonPhase = currentMoonPhaseInfo
@@ -45,6 +47,10 @@ namespace Astro.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddJournalViewModel viewModel)
         {
+            MoonIllumination moonIllum = MoonCalc.GetMoonIllumination(DateTime.Now.ToUniversalTime());
+            MoonData currentMoonData = new MoonData(moonIllum);
+            MoonPhaseInfo currentMoonPhaseInfo = context.MoonPhases.Where(c => c.PhaseID == currentMoonData.PhaseID).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
                 AppUser currentUser = await userManager.GetUserAsync(HttpContext.User);
@@ -53,7 +59,7 @@ namespace Astro.Controllers
                     UserID = currentUser.Id,
                     Date = DateTime.Now,
                     JournalText = viewModel.JournalText,
-                    MoonPhase = viewModel.MoonPhase
+                    MoonPhase = currentMoonPhaseInfo
                 };
 
                 //add journal to database
@@ -61,10 +67,15 @@ namespace Astro.Controllers
                 context.SaveChanges();
 
                 //redirect user to index
-                return Redirect("/Index");
+                return Redirect("/Journal/Index");
             }
             //return user to form if invalid
             return View(viewModel);
+        }
+        public IActionResult Details(int Id)
+        {
+            Journal journal = context.Journals.Where(c => c.ID == Id).Include(c => c.MoonPhase).FirstOrDefault();
+            return View(journal);
         }
     }
 }

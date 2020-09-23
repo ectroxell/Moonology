@@ -1,14 +1,10 @@
 ﻿@page
 @model RegisterModel
-@{
-    ViewData["Title"] = "Register";
-}
-
-<h1>@ViewData["Title"]</h1>
 
 <div class="container">
+    <h1>Register</h1>
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-        <h4>create a new account!</h4>
+        <h4>Create a new account!</h4>
         <hr />
         <div class="form-row">
                 <input placeholder="Name" asp-for="Input.Name" class="col form-control" />
@@ -29,7 +25,7 @@
 
         </div>
         <div class="form-row">
-            <button type="submit" class="btn btn-dark col form-button">register</button>
+            <button type="submit" class="btn btn-dark col form-button bg-pink-clouds">Register</button>
         </div>
     </form>
 </div>

@@ -12,5 +12,7 @@ namespace Astro.Models
         public int UserID { get; set; }
         public MoonPhaseInfo MoonPhase { get; set; }
         public string JournalText { get; set; }
+      //  public IList<Activity> Activities { get; set; }
+        
     }
 }

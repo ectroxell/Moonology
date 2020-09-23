@@ -26,6 +26,9 @@ namespace Astro.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("JournalID")
+                        .HasColumnType("int");
+
                     b.Property<int>("PhaseID")
                         .HasColumnType("int");
 
@@ -33,6 +36,8 @@ namespace Astro.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("JournalID");
 
                     b.ToTable("Activities");
                 });
@@ -86,9 +91,6 @@ namespace Astro.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<int>("ID")
-                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -311,6 +313,13 @@ namespace Astro.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Astro.Models.Activity", b =>
+                {
+                    b.HasOne("Astro.Models.Journal", null)
+                        .WithMany("Activities")
+                        .HasForeignKey("JournalID");
                 });
 
             modelBuilder.Entity("Astro.Models.Journal", b =>

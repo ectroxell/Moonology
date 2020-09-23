@@ -8,20 +8,6 @@ namespace Astro.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Activities",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PhaseID = table.Column<int>(nullable: false),
-                    Text = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Activities", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -222,6 +208,32 @@ namespace Astro.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Activities",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PhaseID = table.Column<int>(nullable: false),
+                    Text = table.Column<string>(nullable: true),
+                    JournalID = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Activities", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Activities_Journals_JournalID",
+                        column: x => x.JournalID,
+                        principalTable: "Journals",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Activities_JournalID",
+                table: "Activities",
+                column: "JournalID");
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -288,10 +300,10 @@ namespace Astro.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Journals");
+                name: "Rituals");
 
             migrationBuilder.DropTable(
-                name: "Rituals");
+                name: "Journals");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
