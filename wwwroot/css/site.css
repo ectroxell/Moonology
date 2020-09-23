@@ -102,12 +102,13 @@ body {
     align-items: stretch;
 }
 .nav-btn {
-    margin: 10px;
-    border-radius: 20px;
+    margin: 12px;
+    border-radius: 24px;
     height: 70px;
-    color: aliceblue;
+    color: white;
     background-image: url("../imgs/pink-clouds.jpg");
     background-size: 100%;
+    padding: 8px;
 }
 
 .nav-link:hover {
@@ -132,4 +133,10 @@ body {
 .hr-white {
     background: whitesmoke;
     height: 2px;
+}
+.journal-table {
+    width: 100%;
+}
+.new-journal-button {
+    margin: 64px;
 }
