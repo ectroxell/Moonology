@@ -64,21 +64,6 @@ namespace Astro.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MoonDataSets",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    PhaseID = table.Column<int>(nullable: false),
-                    Illumination = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MoonDataSets", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "MoonPhases",
                 columns: table => new
                 {
@@ -215,6 +200,28 @@ namespace Astro.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Journals",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(nullable: false),
+                    UserID = table.Column<int>(nullable: false),
+                    MoonPhaseID = table.Column<int>(nullable: true),
+                    JournalText = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Journals", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Journals_MoonPhases_MoonPhaseID",
+                        column: x => x.MoonPhaseID,
+                        principalTable: "MoonPhases",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -253,6 +260,11 @@ namespace Astro.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Journals_MoonPhaseID",
+                table: "Journals",
+                column: "MoonPhaseID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -276,10 +288,7 @@ namespace Astro.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "MoonDataSets");
-
-            migrationBuilder.DropTable(
-                name: "MoonPhases");
+                name: "Journals");
 
             migrationBuilder.DropTable(
                 name: "Rituals");
@@ -289,6 +298,9 @@ namespace Astro.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "MoonPhases");
         }
     }
 }

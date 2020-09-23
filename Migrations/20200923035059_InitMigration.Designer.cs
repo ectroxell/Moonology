@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Astro.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200923013159_InitMigration")]
+    [Migration("20200923035059_InitMigration")]
     partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,6 +89,9 @@ namespace Astro.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int>("ID")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -140,25 +143,30 @@ namespace Astro.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Astro.Models.MoonData", b =>
+            modelBuilder.Entity("Astro.Models.Journal", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Illumination")
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("JournalText")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("MoonPhaseID")
+                        .HasColumnType("int");
 
-                    b.Property<int>("PhaseID")
+                    b.Property<int>("UserID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.ToTable("MoonDataSets");
+                    b.HasIndex("MoonPhaseID");
+
+                    b.ToTable("Journals");
                 });
 
             modelBuilder.Entity("Astro.Models.MoonPhaseInfo", b =>
@@ -305,6 +313,13 @@ namespace Astro.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Astro.Models.Journal", b =>
+                {
+                    b.HasOne("Astro.Models.MoonPhaseInfo", "MoonPhase")
+                        .WithMany()
+                        .HasForeignKey("MoonPhaseID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
