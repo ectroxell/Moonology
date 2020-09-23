@@ -80,7 +80,7 @@ namespace Astro.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new AppUser { Name = Input.Name, Email = Input.Email, UserName = Input.Name };
+                var user = new AppUser { Name = Input.Name, Email = Input.Email, UserName = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 Console.WriteLine("user", user);
                 Console.WriteLine("result", result);
