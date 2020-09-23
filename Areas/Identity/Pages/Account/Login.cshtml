@@ -1,13 +1,9 @@
 ﻿@page
 @model LoginModel
 
-@{
-    ViewData["Title"] = "Login";
-}
-
-<h1>@ViewData["Title"]</h1>
 
 <div class="container">
+    <h1>Login</h1>
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
         <h4>Welcome back! Log into your account below</h4>
         <hr />
@@ -21,7 +17,7 @@
         </div>
 
         <div class="form-row">
-            <button type="submit" class="btn btn-dark col form-button">login</button>
+            <button type="submit" class="btn btn-dark col form-button bg-pink-clouds">Login</button>
         </div>
 
         <div class="form-row d-flex justify-content-around login-footer text-info">
@@ -34,38 +30,6 @@
         </div>
     </form>
 </div>
-
-@*<div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>*@
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

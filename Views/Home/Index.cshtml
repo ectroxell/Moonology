@@ -1,13 +1,15 @@
 ﻿@model Astro.ViewModels.IndexViewModel
 
-    <div class="jumbotron">
-        <h1 class="display-3">Current Moon Stats</h1>
-        <p class="lead">The moon is currently in the <i>@Model.MoonPhaseInfo.Name</i> phase and is <strong>@Model.CurrentMoonData.Illumination</strong> illuminated.</p>
 
 
-        <hr class="my-2">
-        <p class="lead">@Model.MoonPhaseInfo.Name: @Model.MoonPhaseInfo.Keywords</p>
-        <p>@Model.MoonPhaseInfo.DescriptionShort</p>
-        <a asp-controller="MoonPhase" asp-action="Index" asp-route-id="@Model.CurrentMoonData.PhaseID">Learn more here</a>
+<div class="jumbotron bg-pink-clouds">
+    <h1 class="display-3 text-white">Current Moon Stats</h1>
+    <p class="lead text-white">The moon is currently in the <i>@Model.MoonPhaseInfo.Name</i> phase and is <strong>@Model.CurrentMoonData.Illumination</strong> illuminated.</p>
 
-    </div>
+
+    <hr class="hr-white">
+    <p class="lead text-white">@Model.MoonPhaseInfo.Name: @Model.MoonPhaseInfo.Keywords</p>
+    <p class="text-white">@Model.MoonPhaseInfo.DescriptionShort</p>
+    <a class="text-white" asp-controller="MoonPhase" asp-action="Index" asp-route-id="@Model.CurrentMoonData.PhaseID">Learn more here</a>
+
+</div>

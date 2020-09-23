@@ -106,14 +106,30 @@ body {
     border-radius: 20px;
     height: 70px;
     color: aliceblue;
-    background-image: url("../imgs/blue-nebula.jpg");
+    background-image: url("../imgs/pink-clouds.jpg");
+    background-size: 100%;
 }
+
 .nav-link:hover {
-    color: cadetblue;
+    color: whitesmoke;
 }
+
 .bg-nebula {
     background-image: url("../imgs/blue-nebula.jpg");
+    background-size: 100%;
 }
+
 .bg-pink-clouds {
     background-image: url("../imgs/pink-clouds.jpg");
+    background-size: 100%;
+}
+
+.bg-moon-and-clouds {
+    background-image: url("../imgs/moon-and-clouds.jpg");
+    background-size: 100%;
+}
+
+.hr-white {
+    background: whitesmoke;
+    height: 2px;
 }
