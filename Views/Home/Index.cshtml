@@ -10,6 +10,9 @@
     <hr class="hr-white">
     <p class="lead text-white">@Model.MoonPhaseInfo.Name: @Model.MoonPhaseInfo.Keywords</p>
     <p class="text-white">@Model.MoonPhaseInfo.DescriptionShort</p>
-    <a class="text-white" asp-controller="MoonPhase" asp-action="Index" asp-route-id="@Model.CurrentMoonData.PhaseID">Learn more here</a>
 
+</div>
+
+<div class="nav-btn large-btn text-center">
+    <a class="text-white" asp-controller="MoonPhase" asp-action="Index" asp-route-id="@Model.CurrentMoonData.PhaseID">Learn more here</a>
 </div>

@@ -115,20 +115,12 @@ body {
     color: whitesmoke;
 }
 
-.bg-nebula {
-    background-image: url("../imgs/blue-nebula.jpg");
-    background-size: 100%;
-}
 
 .bg-pink-clouds {
     background-image: url("../imgs/pink-clouds.jpg");
     background-size: 100%;
 }
 
-.bg-moon-and-clouds {
-    background-image: url("../imgs/moon-and-clouds.jpg");
-    background-size: 100%;
-}
 
 .hr-white {
     background: whitesmoke;
@@ -136,7 +128,15 @@ body {
 }
 .journal-table {
     width: 100%;
+    margin-bottom: 64px;
+    font-size: large;
 }
-.new-journal-button {
-    margin: 64px;
+.large-btn {
+    width: 80%;
+    font-size: xx-large;
+    margin-left: 99px;
+}
+.journal-text {
+    font-family: 'Satisfy', cursive;
+    font-size: x-large;
 }

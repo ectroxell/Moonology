@@ -12,12 +12,13 @@
 <form asp-controller="Journal" asp-action="Add" method="post">
 
     <div class="form-group">
-        <label asp-for="JournalText"></label>
-        <input asp-for="JournalText" class="form-control"/>
+        <textarea asp-for="JournalText" class="form-control" rows="8" cols="8">
+        Write your journal entry here...
+        </textarea> 
     </div>
 
 
-    <input type="submit" value="Save!"/>
+    <input class="large-btn nav-btn" type="submit" value="Save!"/>
 
 </form>
 
