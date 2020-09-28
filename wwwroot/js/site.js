@@ -1,3 +1,3 @@
 ﻿function handleTableRowClick(rowId) {
-    document.location = `Journal/Details/${rowId}`
+    document.location = `/Journal/Details/${rowId}`;
 }

@@ -121,6 +121,16 @@ body {
     background-size: 100%;
 }
 
+.bg-blue-nebula {
+    background-image: url("../imgs/blue-nebula.jpg");
+    background-size: 100%;
+}
+
+.bg-moon-and-clouds {
+    background-image: url("../imgs/moon-and-clouds.jpg");
+    background-size: 100%;
+}
+
 
 .hr-white {
     background: whitesmoke;
