@@ -1,7 +1,7 @@
 ﻿@model Astro.ViewModels.AddJournalViewModel
 
 
-<div class="jumbotron bg-pink-clouds text-white">
+<div class="jumbotron text-white changeable">
     <h1>New Journal Entry</h1>
     <h3>@Model.MoonPhase.Name: @Model.MoonPhase.Keywords</h3>
     <hr class="hr-white"/>
@@ -12,12 +12,13 @@
 <form asp-controller="Journal" asp-action="Add" method="post">
 
     <div class="form-group">
-        <label asp-for="JournalText"></label>
-        <input asp-for="JournalText" class="form-control"/>
+        <textarea asp-for="JournalText" class="form-control" rows="8" cols="8">
+        Write your journal entry here...
+        </textarea> 
     </div>
 
 
-    <input type="submit" value="Save!"/>
+    <input class="large-btn nav-btn" type="submit" value="Save!"/>
 
 </form>
 

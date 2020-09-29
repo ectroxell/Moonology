@@ -57,7 +57,7 @@ namespace Astro.Controllers
                 Journal newJournal = new Journal()
                 {
                     UserID = currentUser.Id,
-                    Date = DateTime.Now,
+                    Date = DateTime.Now.ToLocalTime(),
                     JournalText = viewModel.JournalText,
                     MoonPhase = currentMoonPhaseInfo
                 };

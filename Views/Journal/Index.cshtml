@@ -1,12 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Humanizer
 @model IList<Journal>
 @inject UserManager<AppUser> UserManager
 
 @if (Model.Count > 0)
 {
     AppUser user = await UserManager.GetUserAsync(User);
-    <div class="jumbotron bg-pink-clouds">
+    <div class="jumbotron changeable">
         <h1 class="text-white">Your moonology journal</h1>
         <hr class="hr-white" />
         <h3 class="text-white">Entries for @user.Name</h3>
@@ -14,31 +13,33 @@
     </div>
 
     <table class="table-hover journal-table">
-        <thead class="bg-pink-clouds text-white">
+        <thead class="text-white changeable">
             <tr>
                 <th scope="col">Date</th>
+                <th scope="col">Time</th>
                 <th scope="col">Moon Phase</th>
                 <th scope="col">Journal</th>
-                
+
             </tr>
         </thead>
         <tbody>
             @foreach (Journal journal in Model)
             {
                
-                <tr>
-                <td><a asp-controller="Journal" asp-action="Details" asp-route-id="@journal.ID">@journal.Date.Humanize()</a></td>
+            <tr style="cursor: pointer;" onclick="handleTableRowClick(@journal.ID)">
+                <td>@journal.Date.ToShortDateString()</td>
+                <td>@journal.Date.ToShortTimeString()</td>
                 <td>@journal.MoonPhase.Name</td>
                 <td>@journal.JournalText</td>
-                </tr>
+            </tr>
                  
             }
         </tbody>
 
     </table>
            
-    <div class="new-journal-btn">
-        <a class="nav-btn" asp-controller="Journal" asp-action="Add">
+    <div class="large-btn nav-btn text-center">
+        <a class="text-white" asp-controller="Journal" asp-action="Add">
             Make a new journal entry
         </a>
     </div>
@@ -46,7 +47,7 @@
 }
 else
 {
-    <div class="jumbotron bg-pink-clouds">
+    <div class="jumbotron changeable">
         <h3 class="text-white">You don't have any journal entries yet!</h3>
         <hr class="hr-white" />
         <p class="lead text-white">Click <a asp-controller="Journal" asp-action="Add">here</a> to make one.</p>

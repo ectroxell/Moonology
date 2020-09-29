@@ -1,4 +1,23 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function handleTableRowClick(rowId) {
+    document.location = `/Journal/Details/${rowId}`;
+}
+function updateUI() {
 
-// Write your JavaScript code.
+    if (localStorage.currentTheme == null) {
+        localStorage.currentTheme = 'bg-pink-clouds';
+    }
+
+    document.documentElement.style.setProperty('--background-image', `url(../imgs/${localStorage.currentTheme}.jpg)`);
+}
+function changeBackground(newBackground) {
+  
+
+    selectedTheme = newBackground === 'blue' ? 'bg-blue-nebula' : 'bg-pink-clouds';
+
+    localStorage.currentTheme = selectedTheme;
+    
+    updateUI();
+}
+
+
+updateUI();

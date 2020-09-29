@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Slabo+27px&display=swap" rel="stylesheet" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 bg-pink-clouds">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 changeable">
             <div class="container">
                 <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
 
@@ -25,11 +26,17 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - MOONOLOGY - designed by Emma Troxell
+        
+        <div class="container wrapper">
+            <div>&copy; 2020 - MOONOLOGY - designed by Emma Troxell</div>
+            <div class="theme-select">
+                Select a theme:
+                <span class="toggle-pink-clouds" onclick="changeBackground('pink')">Pink Clouds</span>
+                <span class="toggle-blue-nebula" onclick="changeBackground('blue')">Blue Nebula</span>
+            </div>
         </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

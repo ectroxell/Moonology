@@ -2,7 +2,7 @@
 
 
 
-<div class="jumbotron bg-pink-clouds">
+<div class="jumbotron bg-pink-clouds changeable">
     <h1 class="display-3 text-white">Current Moon Stats</h1>
     <p class="lead text-white">The moon is currently in the <i>@Model.MoonPhaseInfo.Name</i> phase and is <strong>@Model.CurrentMoonData.Illumination</strong> illuminated.</p>
 
@@ -10,6 +10,9 @@
     <hr class="hr-white">
     <p class="lead text-white">@Model.MoonPhaseInfo.Name: @Model.MoonPhaseInfo.Keywords</p>
     <p class="text-white">@Model.MoonPhaseInfo.DescriptionShort</p>
-    <a class="text-white" asp-controller="MoonPhase" asp-action="Index" asp-route-id="@Model.CurrentMoonData.PhaseID">Learn more here</a>
 
+</div>
+
+<div class="nav-btn large-btn text-center">
+    <a class="text-white" asp-controller="MoonPhase" asp-action="Index" asp-route-id="@Model.CurrentMoonData.PhaseID">Learn more here</a>
 </div>

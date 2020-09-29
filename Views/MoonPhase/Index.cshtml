@@ -15,7 +15,7 @@
     </nav>
 
     <div class="container flex-column moon-details-content">
-        <div class="jumbotron bg-pink-clouds">
+        <div class="jumbotron bg-pink-clouds changeable">
             <h1 class="display-3 text-white">@Model.Name</h1>
             <p class="lead text-white">@Model.Keywords: @Model.DescriptionShort</p>
 
@@ -31,7 +31,7 @@
             @if (Model.Rituals != null)
             {
                 <div class="card">
-                    <div class="card-header text-white bg-pink-clouds">Rituals for the @Model.Name</div>
+                    <div class="card-header text-white bg-pink-clouds changeable">Rituals for the @Model.Name</div>
                     <div class="card-body">
                         @if (Model.Rituals.Count > 1)
                         {
@@ -53,7 +53,7 @@
             @if (Model.Activities != null)
             {
                 <div class="card">
-                    <div class="card-header bg-pink-clouds text-white">Activities for the @Model.Name</div>
+                    <div class="card-header bg-pink-clouds text-white changeable">Activities for the @Model.Name</div>
                     <div class="card-body">
                         @if (Model.Activities.Count > 1)
                         {
