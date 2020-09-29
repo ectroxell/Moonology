@@ -62,6 +62,10 @@ html {
 
 }
 
+:root {
+    --background-image: url("../imgs/bg-pink-clouds.jpg")
+}
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
@@ -100,35 +104,21 @@ body {
     display: flex;
     width: 100%;
     align-items: stretch;
+    justify-content: space-around;
 }
 .nav-btn {
     margin: 12px;
     border-radius: 24px;
     height: 70px;
     color: white;
-    background-image: url("../imgs/pink-clouds.jpg");
+    background-image: var(--background-image);
     background-size: 100%;
     padding: 8px;
+    cursor: pointer;
 }
 
 .nav-link:hover {
     color: whitesmoke;
-}
-
-
-.bg-pink-clouds {
-    background-image: url("../imgs/pink-clouds.jpg");
-    background-size: 100%;
-}
-
-.bg-blue-nebula {
-    background-image: url("../imgs/blue-nebula.jpg");
-    background-size: 100%;
-}
-
-.bg-moon-and-clouds {
-    background-image: url("../imgs/moon-and-clouds.jpg");
-    background-size: 100%;
 }
 
 
@@ -149,4 +139,30 @@ body {
 .journal-text {
     font-family: 'Satisfy', cursive;
     font-size: x-large;
+}
+
+.changeable {
+    background-image: var(--background-image);
+    background-size: 100%;
+}
+
+.toggle-pink-clouds {
+    margin: 12px;
+    border-radius: 24px;
+    height: 70px;
+    color: white;
+    background-image: url("../imgs/bg-pink-clouds.jpg");
+    background-size: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+.toggle-blue-nebula {
+    margin: 12px;
+    border-radius: 24px;
+    height: 70px;
+    color: white;
+    background-image: url("../imgs/bg-blue-nebula.jpg");
+    background-size: 100%;
+    padding: 8px;
+    cursor: pointer;
 }

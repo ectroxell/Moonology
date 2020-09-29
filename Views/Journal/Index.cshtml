@@ -5,7 +5,7 @@
 @if (Model.Count > 0)
 {
     AppUser user = await UserManager.GetUserAsync(User);
-    <div class="jumbotron bg-pink-clouds">
+    <div class="jumbotron changeable">
         <h1 class="text-white">Your moonology journal</h1>
         <hr class="hr-white" />
         <h3 class="text-white">Entries for @user.Name</h3>
@@ -13,7 +13,7 @@
     </div>
 
     <table class="table-hover journal-table">
-        <thead class="bg-pink-clouds text-white">
+        <thead class="text-white changeable">
             <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
@@ -47,7 +47,7 @@
 }
 else
 {
-    <div class="jumbotron bg-pink-clouds">
+    <div class="jumbotron changeable">
         <h3 class="text-white">You don't have any journal entries yet!</h3>
         <hr class="hr-white" />
         <p class="lead text-white">Click <a asp-controller="Journal" asp-action="Add">here</a> to make one.</p>
