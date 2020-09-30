@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
-using Astro.Data;
+﻿using Astro.Data;
 using Astro.Models;
 using Astro.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SunCalcNet;
 using SunCalcNet.Model;
+using System;
+using System.Linq;
 
 namespace Astro.Controllers
 {
@@ -32,10 +32,8 @@ namespace Astro.Controllers
                 CurrentMoonData = currentMoonData,
                 MoonPhaseInfo = currentMoonPhaseInfo
             };
-           
+
             return View(viewModel);
         }
-        
-        
     }
 }

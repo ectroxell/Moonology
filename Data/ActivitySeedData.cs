@@ -2,14 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Astro.Data
 {
-    public class ActivitySeedData { 
-
+    public class ActivitySeedData
+    {
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using var context = new ApplicationDbContext(
@@ -152,5 +150,5 @@ namespace Astro.Data
             context.Activities.AddRange(Activity1, Activity2, Activity3, Activity4, Activity5, Activity6, Activity7, Activity9, Activity10, Activity11, Activity12, Activity13, Activity14, Activity15, Activity16, Activity18, Activity19, Activity20, Activity21, Activity22, Activity23, Activity24, Activity25);
             context.SaveChanges();
         }
-    }   
+    }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Astro.Models;
+﻿using Astro.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,7 +19,6 @@ namespace Astro.Data
 
         //protected override void OnModelCreating(ModelBuilder builder)
         //{
-          
         //}
     }
 }

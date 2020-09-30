@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Astro.Data
 {
@@ -24,7 +22,7 @@ namespace Astro.Data
 
                 MoonPhaseInfo newMoon = new MoonPhaseInfo()
                 {
-                    PhaseID = 1, 
+                    PhaseID = 1,
                     Name = "New Moon",
                     Keywords = "Set intentions",
                     DescriptionShort = "Listen to your intuition and allow new ideas to form.",

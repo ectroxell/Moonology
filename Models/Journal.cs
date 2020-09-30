@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Astro.Models
 {
@@ -12,7 +9,6 @@ namespace Astro.Models
         public int UserID { get; set; }
         public MoonPhaseInfo MoonPhase { get; set; }
         public string JournalText { get; set; }
-      //  public IList<Activity> Activities { get; set; }
-        
+        //  public IList<Activity> Activities { get; set; }
     }
 }

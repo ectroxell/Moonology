@@ -9,7 +9,6 @@
         <h1 class="text-white">Your moonology journal</h1>
         <hr class="hr-white" />
         <h3 class="text-white">Entries for @user.Name</h3>
-
     </div>
 
     <table class="table-hover journal-table">
@@ -19,25 +18,23 @@
                 <th scope="col">Time</th>
                 <th scope="col">Moon Phase</th>
                 <th scope="col">Journal</th>
-
             </tr>
         </thead>
         <tbody>
             @foreach (Journal journal in Model)
             {
-               
+
             <tr style="cursor: pointer;" onclick="handleTableRowClick(@journal.ID)">
                 <td>@journal.Date.ToShortDateString()</td>
                 <td>@journal.Date.ToShortTimeString()</td>
                 <td>@journal.MoonPhase.Name</td>
                 <td>@journal.JournalText</td>
             </tr>
-                 
+
             }
         </tbody>
-
     </table>
-           
+
     <div class="large-btn nav-btn text-center">
         <a class="text-white" asp-controller="Journal" asp-action="Add">
             Make a new journal entry
