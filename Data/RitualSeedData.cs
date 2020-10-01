@@ -59,7 +59,7 @@ namespace Astro.Data
             Ritual ritual8 = new Ritual()
             {
                 PhaseID = 4,
-                Text = "White Light Protection: Sit upright on a chair with your feet on the ground. Close your eyes and breathe deeply. As you inhale, picture pure white light being drawn down into your body through the top of your head. As you exhale, " +
+                Text = "Sit upright on a chair with your feet on the ground. Close your eyes and breathe deeply. As you inhale, picture pure white light being drawn down into your body through the top of your head. As you exhale, " +
                        "visualize the light filling up your body, starting at your head and slowly moving down and ending at your feet. Next, sense it expanding outwards from your heart center, pushing away negative energy as it grows. Visualize it expanding into" +
                        " an egg-shaped field, extending all around you."
             };
@@ -76,7 +76,7 @@ namespace Astro.Data
             Ritual ritual11 = new Ritual()
             {
                 PhaseID = 8,
-                Text = "Smoke Purification Ritual: Light a candle and spend a few minutes grounding yourself by meditatiing or deep breathing. Light the smoke wand with the candle and slowly walk around your house. Start at the front door and move in a clockwise direction. " +
+                Text = "Light a candle and spend a few minutes grounding yourself by meditatiing or deep breathing. Light a smoke wand with the candle and slowly walk around your house. Start at the front door and move in a clockwise direction. " +
                        "As you enter each room, open all the doors and windows. Gently wave the smoke wand, allowing the smoke to get into the corners of each room. Focus your intention on driving out negative energy."
             };
 

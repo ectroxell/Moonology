@@ -10,9 +10,9 @@ namespace Astro.Data
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using var context = new ApplicationDbContext(
-                serviceProvider.GetRequiredService<
-                    DbContextOptions<ApplicationDbContext>>());
+            using var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
+            
+            
             // Look for any DB sets.
             if (context.Activities.Any())
             {

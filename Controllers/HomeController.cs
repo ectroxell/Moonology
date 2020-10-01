@@ -1,7 +1,6 @@
 ﻿using Astro.Data;
 using Astro.Models;
 using Astro.ViewModels;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SunCalcNet;
 using SunCalcNet.Model;
@@ -14,12 +13,9 @@ namespace Astro.Controllers
     {
         private ApplicationDbContext context;
 
-        private UserManager<AppUser> userManager;
-
-        public HomeController(ApplicationDbContext dbContext, UserManager<AppUser> _userManager)
+        public HomeController(ApplicationDbContext dbContext)
         {
             context = dbContext;
-            userManager = _userManager;
         }
 
         public IActionResult Index()
