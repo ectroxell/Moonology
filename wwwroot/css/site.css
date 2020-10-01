@@ -62,7 +62,7 @@ html {
 
 :root {
     --background-image: url("../imgs/bg-pink-clouds.jpg");
-    --background-color: purple;
+    --background-color: rgb(186, 85, 211);
 }
 
 body {
@@ -155,8 +155,9 @@ body {
 }
 
 .journal-text {
-    font-family: 'Satisfy', cursive;
+    color: var(--background-color);
     font-size: x-large;
+
 }
 
 .js-theme-switch {

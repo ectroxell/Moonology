@@ -7,7 +7,7 @@ function updateUI() {
         localStorage.currentTheme = 'bg-pink-clouds';
     }
     if (localStorage.textBgColor == null) {
-        localStorage.textBgColor = 'purple'
+        localStorage.textBgColor = 'rgb(185, 103, 190)'
     }
 
     document.documentElement.style.setProperty('--background-image', `url(../imgs/${localStorage.currentTheme}.jpg)`);
@@ -17,7 +17,7 @@ function updateUI() {
 function changeBackground(newBackground) {
     let selectedTheme = newBackground === 'blue' ? 'bg-blue-nebula' : 'bg-pink-clouds';
     
-    localStorage.textBgColor = newBackground === 'blue' ? 'navy' : 'purple';
+    localStorage.textBgColor = newBackground === 'blue' ? 'rgb(14, 0, 50)' : 'rgb(185, 103, 190)';
     localStorage.currentTheme = selectedTheme;
 
     updateUI();
