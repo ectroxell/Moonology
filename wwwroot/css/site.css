@@ -61,7 +61,8 @@ html {
 }
 
 :root {
-    --background-image: url("../imgs/bg-pink-clouds.jpg")
+    --background-image: url("../imgs/bg-pink-clouds.jpg");
+    --background-color: purple;
 }
 
 body {
@@ -158,7 +159,7 @@ body {
     font-size: x-large;
 }
 
-.changeable {
+.js-theme-switch {
     background-image: var(--background-image);
     background-size: 100%;
 }
@@ -191,4 +192,8 @@ body {
     margin-left: 24px;
     background-image: var(--background-image);
     color: white;
+}
+.bg-text {
+    background-color: var(--background-color);
+
 }

@@ -7,7 +7,7 @@
     {
         <li class="nav-item">
             <a class="nav-link text-light" asp-controller="Journal" asp-action="Index">
-                Moon Journals
+                Moon Journal
             </a>
         </li>
         <li class="nav-item">
@@ -18,7 +18,7 @@
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-light">Logout</button>
+                <button type="submit" class="nav-link btn btn-link text-light">Log Out</button>
             </form>
         </li>
     }
@@ -28,7 +28,7 @@
             <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Log In</a>
         </li>
     }
 </ul>

@@ -38,7 +38,7 @@ namespace Astro.Data
             Ritual ritual4 = new Ritual()
             {
                 PhaseID = 5,
-                Text = "Take a meditative and cleansing bath.Fill the bath with essential oils and cleansing Epsom salts."
+                Text = "Take a meditative and cleansing bath. Fill the bath with essential oils and cleansing epsom salts."
             };
             Ritual ritual5 = new Ritual()
             {
