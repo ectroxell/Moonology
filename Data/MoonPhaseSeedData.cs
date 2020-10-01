@@ -86,6 +86,7 @@ namespace Astro.Data
                     Name = "Waning Crescent",
                     Keywords = "Silence",
                     DescriptionShort = "Rest and restore - get very quiet so that you can hear your intuition.",
+                    DescriptionLong = "The waning crescent phase marks the end of the lunar cycle. It is time for surrender and rest. No more action, thinking, or planning is required - just relax and trust in the process."
                 };
 
                 //add to db and save changes
