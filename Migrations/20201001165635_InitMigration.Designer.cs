@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Astro.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201001014545_InitMigration")]
+    [Migration("20201001165635_InitMigration")]
     partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
