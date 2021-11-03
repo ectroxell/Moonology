@@ -1,6 +1,5 @@
 ﻿@model Astro.ViewModels.MoonDetailsViewModel
 
-
 <div class="wrapper">
 
     <nav class="nav-bar nav flex-column moon-details-nav">
@@ -15,23 +14,22 @@
     </nav>
 
     <div class="container flex-column moon-details-content">
-        <div class="jumbotron bg-pink-clouds changeable">
+        <div class="jumbotron bg-pink-clouds js-theme-switch">
             <h1 class="display-3 text-white">@Model.Name</h1>
             <p class="lead text-white">@Model.Keywords: @Model.DescriptionShort</p>
 
             @if (Model.DescriptionLong != null)
             {
-                <hr class="hr-white white">
-                <p class="lead text-white">@Model.DescriptionLong</p>
+                <hr class="hr-white">
+                <div class="bg-text"><p class="lead text-white">@Model.DescriptionLong</p></div>
             }
-
         </div>
 
         <div class="card-deck">
             @if (Model.Rituals != null)
             {
                 <div class="card">
-                    <div class="card-header text-white bg-pink-clouds changeable">Rituals for the @Model.Name</div>
+                    <div class="card-header text-white bg-pink-clouds js-theme-switch">Rituals for the @Model.Name</div>
                     <div class="card-body">
                         @if (Model.Rituals.Count > 1)
                         {
@@ -53,7 +51,7 @@
             @if (Model.Activities != null)
             {
                 <div class="card">
-                    <div class="card-header bg-pink-clouds text-white changeable">Activities for the @Model.Name</div>
+                    <div class="card-header bg-pink-clouds text-white js-theme-switch">Activities for the @Model.Name</div>
                     <div class="card-body">
                         @if (Model.Activities.Count > 1)
                         {

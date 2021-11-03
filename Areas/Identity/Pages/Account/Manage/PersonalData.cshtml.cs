@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
-using Astro.Models;
+﻿using Astro.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace Astro.Areas.Identity.Pages.Account.Manage
 {

@@ -1,8 +1,5 @@
 ﻿using SunCalcNet.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Astro.Models
 {
@@ -61,6 +58,8 @@ namespace Astro.Models
             Illumination = Convert.ToInt32(cfg.Fraction * 100).ToString() + '%';
         }
 
-        public MoonData() { }
+        public MoonData()
+        {
+        }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using Astro.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using NUnit.Framework.Internal;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Astro.Data
 {
@@ -41,7 +38,7 @@ namespace Astro.Data
             Ritual ritual4 = new Ritual()
             {
                 PhaseID = 5,
-                Text = "Take a meditative and cleansing bath.Fill the bath with essential oils and cleansing Epsom salts."
+                Text = "Take a meditative and cleansing bath. Fill the bath with essential oils and cleansing epsom salts."
             };
             Ritual ritual5 = new Ritual()
             {
@@ -59,10 +56,34 @@ namespace Astro.Data
                 Text = "On a piece of paper, write down what you are ready to release. Burn the paper in a safe way. Say aloud what you are releasing as you watch the paper burn. When the paper has finished burning," +
                        " breathe in a cleansing breath and smile."
             };
+            Ritual ritual8 = new Ritual()
+            {
+                PhaseID = 4,
+                Text = "Sit upright on a chair with your feet on the ground. Close your eyes and breathe deeply. As you inhale, picture pure white light being drawn down into your body through the top of your head. As you exhale, " +
+                       "visualize the light filling up your body, starting at your head and slowly moving down and ending at your feet. Next, sense it expanding outwards from your heart center, pushing away negative energy as it grows. Visualize it expanding into" +
+                       " an egg-shaped field, extending all around you."
+            };
+            Ritual ritual9 = new Ritual()
+            {
+                PhaseID = 2,
+                Text = "It is a time for action, so go through your intentions and write down a list of practical goals that will lead you to manifesting each one. If you are unsure of where to begin, use an oracle or tarot card deck to help guide your energy."
+            };
+            Ritual ritual10 = new Ritual()
+            {
+                PhaseID = 6,
+                Text = "Your insight will be heightened, so it's a powerful time for both shadow work and divination. Use the waning moon oracle card spread for guidance on what needs to be released in your life."
+            };
+            Ritual ritual11 = new Ritual()
+            {
+                PhaseID = 8,
+                Text = "Light a candle and spend a few minutes grounding yourself by meditatiing or deep breathing. Light a smoke wand with the candle and slowly walk around your house. Start at the front door and move in a clockwise direction. " +
+                       "As you enter each room, open all the doors and windows. Gently wave the smoke wand, allowing the smoke to get into the corners of each room. Focus your intention on driving out negative energy."
+            };
+
 
             //add to db and save changes
 
-            context.Rituals.AddRange(ritual1, ritual2, ritual3, ritual4, ritual5, ritual6, ritual7);
+            context.Rituals.AddRange(ritual1, ritual2, ritual3, ritual4, ritual5, ritual6, ritual7, ritual8, ritual9, ritual10, ritual11);
             context.SaveChanges();
         }
     }

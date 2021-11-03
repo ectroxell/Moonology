@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Astro.Data
 {
@@ -24,7 +22,7 @@ namespace Astro.Data
 
                 MoonPhaseInfo newMoon = new MoonPhaseInfo()
                 {
-                    PhaseID = 1, 
+                    PhaseID = 1,
                     Name = "New Moon",
                     Keywords = "Set intentions",
                     DescriptionShort = "Listen to your intuition and allow new ideas to form.",
@@ -88,6 +86,7 @@ namespace Astro.Data
                     Name = "Waning Crescent",
                     Keywords = "Silence",
                     DescriptionShort = "Rest and restore - get very quiet so that you can hear your intuition.",
+                    DescriptionLong = "The waning crescent phase marks the end of the lunar cycle. It is time for surrender and rest. No more action, thinking, or planning is required - just relax and trust in the process."
                 };
 
                 //add to db and save changes

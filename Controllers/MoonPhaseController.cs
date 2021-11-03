@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Astro.Data;
+﻿using Astro.Data;
 using Astro.Models;
 using Astro.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Astro.Controllers
 {
@@ -22,13 +19,15 @@ namespace Astro.Controllers
             context = dbContext;
             userManager = _userManager;
         }
+
         // GET: /<controller>/
         public IActionResult Index(int id)
         {
             MoonPhaseInfo moonPhase = context.MoonPhases.Where(c => c.PhaseID == id).FirstOrDefault();
             IList<Ritual> rituals = context.Rituals.Where(c => c.PhaseID == moonPhase.PhaseID).ToList();
             IList<Activity> activities = context.Activities.Where(c => c.PhaseID == moonPhase.PhaseID).ToList();
-            MoonDetailsViewModel viewModel = new MoonDetailsViewModel() {
+            MoonDetailsViewModel viewModel = new MoonDetailsViewModel()
+            {
                 Keywords = moonPhase.Keywords,
                 Name = moonPhase.Name,
                 DescriptionShort = moonPhase.DescriptionShort,
@@ -44,7 +43,6 @@ namespace Astro.Controllers
             {
                 viewModel.Activities = activities;
             }
-            
 
             return View(viewModel);
         }

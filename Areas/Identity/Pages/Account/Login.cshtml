@@ -1,11 +1,10 @@
 ﻿@page
 @model LoginModel
 
-
 <div class="container">
-    <h1>Login</h1>
+    <h1>Log In</h1>
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-        <h4>Welcome back! Log into your account below</h4>
+        <h4>Welcome back! Log in to your account below.</h4>
         <hr />
         <div class="form-row">
 
@@ -15,7 +14,7 @@
         </div>
 
         <div class="form-row">
-            <button type="submit" class="btn btn-dark col form-button changeable">Login</button>
+            <button type="submit" class="btn btn-dark col form-button js-theme-switch">Login</button>
         </div>
 
         <div class="form-row d-flex justify-content-around login-footer text-info">
