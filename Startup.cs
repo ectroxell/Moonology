@@ -57,8 +57,17 @@ namespace Astro
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
+                // Normally, you would have .MapBlazorHub() and /MapFallbackToPage("/_Host") here.
+                //
+                // The change below puts your Blazor content under /Blazor (YourSite.com/Blazor/SomePage). This serves a few purposes:
+                //  - Eliminates the possibility of conflicts with existing MVC routes.
+                //  - Ordinarily, Blazor takes over the default route (YourSite.com with no path) which can be problematic.
+                //    Our goal is to avoid interfering with existing MVC behavior.
+                // 
+                // Some day, if the entire MVC app is ever completely re-worked in Blazor, you could change this
+                // back to the typical settings, tweak a few other minor changes in _Host that support this, and perhaps have a party.
+                endpoints.MapBlazorHub("/Blazor/_blazor");
+                endpoints.MapFallbackToPage("~/Blazor/{*clientroutes:nonfile}", "/Blazor/_Host");
             });
         }
     }
